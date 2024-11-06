@@ -17,8 +17,24 @@ class MainActivity : AppCompatActivity() {
         val edtNumAdult = findViewById<TextInputEditText>(R.id.edt_number_of_adult)
         val edtNumkids = findViewById<TextInputEditText>(R.id.edt_number_of_kids)
         val btnCalcular = findViewById<Button>(R.id.btn_calcular)
+        val carne = 400
+        val carneKids = 200
+        val cerveja = 4
+        val refri = 1
 
         btnCalcular.setOnClickListener {
+            val numAdult: Float = edtNumAdult.text.toString().toFloat()
+            val numKids: Float = edtNumkids.text.toString().toFloat()
+
+            val totalCarneAdulto = numAdult * carne
+            val totalCarneKIds = numKids * carneKids
+            val totalCarne = totalCarneAdulto + totalCarneKIds / 1000
+            val totalCereveja = numAdult * cerveja
+            val totalRefri = numAdult + numKids * refri
+
+            println(totalCarne)
+            println(totalCereveja)
+            println(totalRefri)
 
         }
 
