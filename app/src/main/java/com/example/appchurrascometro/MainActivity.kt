@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -23,18 +24,26 @@ class MainActivity : AppCompatActivity() {
         val refri = 1
 
         btnCalcular.setOnClickListener {
-            val numAdult: Float = edtNumAdult.text.toString().toFloat()
-            val numKids: Float = edtNumkids.text.toString().toFloat()
+            val numAdultStr: String = edtNumAdult.text.toString()
+            val numKidsStr: String = edtNumkids.text.toString()
 
-            val totalCarneAdulto = numAdult * carne
-            val totalCarneKIds = numKids * carneKids
-            val totalCarne = totalCarneAdulto + totalCarneKIds / 1000
-            val totalCereveja = numAdult * cerveja
-            val totalRefri = numAdult + numKids * refri
+            if (numAdultStr == "" ||  numKidsStr == "") {
+                Snackbar.make(edtNumAdult, "Preencha todos os campos", Snackbar.LENGTH_LONG).show()
 
-            println(totalCarne)
-            println(totalCereveja)
-            println(totalRefri)
+            } else {
+                val numAdult: Float = edtNumAdult.text.toString().toFloat()
+                val numKids: Float = edtNumkids.text.toString().toFloat()
+
+                val totalCarneAdulto = numAdult * carne
+                val totalCarneKIds = numKids * carneKids
+                val totalCarne = totalCarneAdulto + totalCarneKIds / 1000
+                val totalCereveja = numAdult * cerveja
+                val totalRefri = numAdult + numKids * refri
+
+                println(totalCarne)
+                println(totalCereveja)
+                println(totalRefri)
+            }
 
         }
 
