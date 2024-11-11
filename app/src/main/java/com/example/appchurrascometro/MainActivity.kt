@@ -1,7 +1,9 @@
 package com.example.appchurrascometro
 
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -22,6 +24,16 @@ class MainActivity : AppCompatActivity() {
         val carneKids = 200
         val cerveja = 4
         val refri = 1
+
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.time,
+            android.R.layout.simple_spinner_item
+        )
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        val spinner: Spinner = findViewById(R.id.spinner_time)
+        spinner.adapter = adapter
 
         btnCalcular.setOnClickListener {
             val numAdultStr: String = edtNumAdult.text.toString()

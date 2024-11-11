@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">appchurrascometro</string>
+    <string-array name="time">
+        <item>"Menos de 3 horas"</item>
+        <item>"Entre 3 e 5 horas"</item>
+        <item>"Mais de 5 horas"</item>
+    </string-array>
 </resources>
