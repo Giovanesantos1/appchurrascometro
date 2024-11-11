@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:layout_gravity="center"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ResultActivity">
 
     <TextView
         android:id="@+id/tv_title"
@@ -20,63 +22,59 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_num_of_adult"
+    <TextView
+        android:id="@+id/tv_meat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:text="Quantidade de carne (Kg):"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title">
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_number_of_adult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Número de adultos Ex:25"
-            android:inputType="number"
-            android:textSize="20sp" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/num_of_kids"
+    <TextView
+        android:id="@+id/tv_beer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Quantidade de bebida (Latas):"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_num_of_adult">
+        app:layout_constraintTop_toBottomOf="@+id/tv_meat" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_number_of_kids"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Número de crianças Ex: 15"
-            android:inputType="number"
-            android:textSize="20dp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Spinner
-        android:id="@+id/spinner_time"
+    <TextView
+        android:id="@+id/tv_drink"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Quantidade de refrigerante (Litros):"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num_of_kids"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_beer" />
 
     <Button
-        android:id="@+id/btn_calcular"
+        android:id="@+id/btn_refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Calcular"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Fazer outro calculo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_time" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tv_drink" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
